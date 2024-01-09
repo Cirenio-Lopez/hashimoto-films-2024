@@ -1,0 +1,28 @@
+{
+  "media": {
+    "media_001": {
+      "type": "google_storage",
+      "title": "Sample Video Title 1",
+      "subtitle": "Sample Video Subtitle 1",
+      "description": "Description of Sample Video 1",
+      "url": "url_to_video_1",
+      "order": 1
+    },
+    "media_002": {
+      "type": "instagram",
+      "title": "Sample Image Title 2",
+      "subtitle": "Sample Image Subtitle 2",
+      "description": "Description of Sample Image 2",
+      "url": "url_to_image_2",
+      "order": 2
+    },
+    "media_003": {
+      "type": "vimeo",
+      "title": "Sample Audio Title 3",
+      "subtitle": "Sample Audio Subtitle 3",
+      "description": "Description of Sample Audio 3",
+      "url": "url_to_audio_3",
+      "order": 3
+    }
+  }
+}
