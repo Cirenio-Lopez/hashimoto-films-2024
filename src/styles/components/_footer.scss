@@ -1,0 +1,47 @@
+.footer {
+  height: 150px;
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: $layout-breakpoint-xsmall) {
+    height: auto;
+  }
+
+  .footer-content {
+    text-align: center;
+  }
+
+  .footer-phone {
+    padding: 12px 0;
+    font-size: 1.75rem;
+    display: block;
+
+    @media (max-width: $layout-breakpoint-xsmall) {
+      padding: 6px 0;
+      font-size: 1.25rem;
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+      font-weight: inherit;
+    }
+  }
+
+  .footer-copy {
+    padding: 12px 0 36px 0;
+    font-weight: 300;
+    font-size: 1.75rem;
+
+    @media (max-width: $layout-breakpoint-xsmall) {
+      padding: 6px 0 36px 0;
+      font-size: 1.25rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none; // Optional, to remove underline from links
+    }
+  }
+}

@@ -1,0 +1,142 @@
+.banner {
+  z-index: 200;
+  position: relative;
+
+  .banner-row {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $layout-breakpoint-medium) {
+      &:first-child {
+        margin-top: 24px;
+        padding-left: 24px;
+      }
+      &:last-child {
+        padding-right: 24px;
+      }
+      &.center {
+        .row-letter {
+          left: 0;
+        }
+      }
+    }
+
+    &.center {
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      .row-letter {
+        left: 0;
+      }
+    }
+
+    .row-title,
+    .row-letter {
+      font-size: 12rem;
+      font-weight: 500;
+      position: relative;
+      letter-spacing: -0.8rem;
+      display: inline-block;
+      white-space: pre;
+
+      @media (max-width: $layout-breakpoint-xsmall) {
+        font-size: 8rem;
+      }
+    }
+
+    .row-col {
+      width: 50%;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+
+      @media (max-width: $layout-breakpoint-medium) {
+        width: 70%;
+      }
+
+      @media (max-width: 1240px) {
+        &:last-child {
+          display: none;
+        }
+      }
+
+      @media (max-width: $layout-breakpoint-xsmall) {
+        &.bottom {
+          display: flex !important;
+          justify-content: flex-end;
+        }
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      &.bottom {
+        display: flex !important;
+      }
+
+      .row-message {
+        font-weight: 500;
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+        width: 300px;
+      }
+    }
+  }
+
+  .marquee-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+
+    .animate {
+      animation: marquee 15s linear infinite;
+
+      @keyframes marquee {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+}
+
+.transition-image {
+  position: absolute;
+  top: -25%;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    height: auto;
+    display: flex;
+  }
+  &.final {
+    overflow: hidden;
+    display: block;
+    top: -32px;
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    z-index: 100;
+    @media (max-width: $layout-breakpoint-xsmall) {
+      top: -28px;
+    }
+    @media (min-width: $layout-breakpoint-small) {
+      max-width: 750px;
+    }
+    @media (min-width: $layout-breakpoint-medium) {
+      max-width: 1000px;
+    }
+    img {
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.resume-wrapper {
+  overflow: hidden;
+  display: block;
+  top: -32px;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  z-index: 100;
+  @media (max-width: $layout-breakpoint-xsmall) {
+    top: -28px;
+  }
+  @media (min-width: $layout-breakpoint-small) {
+    max-width: 850px;
+  }
+  @media (min-width: $layout-breakpoint-medium) {
+    max-width: 1000px;
+  }
+}
+
+.resume {
+  display: flex;
+  @media (max-width: $layout-breakpoint-xsmall) {
+    flex-direction: column;
+  }
+  .experience {
+    padding: 16px 0;
+  }
+  .text-cover {
+    position: relative;
+    min-width: 55%;
+    padding: 48px;
+    background-color: $black;
+    .name {
+      font-size: 36px;
+      padding: 8px 0;
+      text-align: center;
+    }
+    .contact {
+      font-size: 16px;
+      padding: 8px 0;
+      text-align: center;
+      line-height: 1.5em;
+      a {
+        color: inherit;
+        font-weight: inherit;
+      }
+    }
+    .subtitle {
+      font-size: 18px;
+      padding: 8px 0;
+    }
+    .title {
+      font-size: 32px;
+      padding: 16px 0;
+    }
+    ul {
+      list-style-type: circle;
+    }
+    .description {
+      font-size: 16px;
+      font-weight: 300;
+      padding: 8px 0;
+    }
+  }
+}
