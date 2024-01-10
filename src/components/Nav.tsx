@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faCableCar } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
@@ -49,6 +50,14 @@ export default function Nav({ show, setShow }: NavProps) {
               onClick={handleLinkClick}
             >
               <FontAwesomeIcon icon={["fab", "instagram"]} />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="https://gondola.cc/Hashimoto_Films"
+              onClick={handleLinkClick}
+            >
+              <FontAwesomeIcon icon={faCableCar} />
             </Link>
           </li>
         </ul>

@@ -2,26 +2,33 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ref, get, child } from "firebase/database";
 import { database } from "../../../firebase";
-import MultiMedia from "@/components/MultiMedia";
+import Gallery from "@/components/ImageGallery";
 
 // Define the expected data structure
-interface MediaData {
-  [key: string]: {
-    url: string;
-    type: string;
-  };
+interface GalleryItem {
+  description: string;
+  order: number;
+  subtitle: string;
+  title: string;
+  type: string;
+  url: string;
+}
+
+interface GalleryProps {
+  banner: string;
+  content: { [key: string]: GalleryItem };
 }
 
 export default function Index() {
-  const [data, setData] = useState<MediaData | null>(null);
+  const [data, setData] = useState<GalleryProps | null>(null);
+  const [galleryData, setGalleryData] = useState<any[]>([]);
 
   useEffect(() => {
     const dbRef = ref(database);
-    get(child(dbRef, "/portfolio/content"))
+    get(child(dbRef, "/gallery"))
       .then((snapshot) => {
         if (snapshot.exists()) {
-          setData(snapshot.val() as MediaData);
-          console.log(data);
+          setData(snapshot.val());
         } else {
           console.log("No data available");
         }
@@ -30,6 +37,17 @@ export default function Index() {
         console.error(error);
       });
   }, []);
+
+  useEffect(() => {
+    if (data && data.content) {
+      const temp = Object.values(data.content).map((item) => ({
+        id: item.order,
+        original: item.url,
+        thumbnail: item.url,
+      }));
+      setGalleryData(temp.reverse());
+    }
+  }, [data]);
 
   return (
     <motion.div
@@ -42,7 +60,7 @@ export default function Index() {
         duration: 1.6,
       }}
     >
-      <MultiMedia data={data} />
+      <Gallery images={galleryData} />
     </motion.div>
   );
 }

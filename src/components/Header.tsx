@@ -3,11 +3,12 @@ import Link from "next/link";
 import Nav from "./Nav"; // Ensure this is the path to your Nav component
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faCableCar } from "@fortawesome/free-solid-svg-icons";
 import { motion } from "framer-motion";
 import { library } from "@fortawesome/fontawesome-svg-core";
 
 // Initialize FontAwesome library
-library.add(faInstagram);
+library.add(faInstagram, faCableCar);
 
 const Header = () => {
   // State to control the visibility of the mobile navigation menu
@@ -18,7 +19,11 @@ const Header = () => {
       className="header"
       initial={{ opacity: 0, y: -180 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ ease: "easeInOut", duration: 1, delay: 0.6 }}
+      transition={{
+        ease: [0.6, 0.01, 0.05, 0.95],
+        duration: 1.6,
+      }}
+      key="header"
     >
       <div className="header-inner">
         {/* Logo Section */}
@@ -48,6 +53,14 @@ const Header = () => {
               <Link href="https://www.instagram.com/hashimoto_films">
                 <FontAwesomeIcon
                   icon={["fab", "instagram"]}
+                  style={{ fontSize: "28px" }}
+                />
+              </Link>
+            </li>
+            <li>
+              <Link href="https://gondola.cc/Hashimoto_Films">
+                <FontAwesomeIcon
+                  icon={faCableCar}
                   style={{ fontSize: "28px" }}
                 />
               </Link>

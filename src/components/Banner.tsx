@@ -107,7 +107,11 @@ const BannerRowTop = ({ title }: { title: string }) => {
         transition={{ ease: "easeInOut", delay: 0.4 }}
         key="top-banner"
       >
-        <span className="row-message">Storytelling within Sports.</span>
+        {title === "Film" ? (
+          <span className="row-message">Storytelling within Sports.</span>
+        ) : (
+          <></>
+        )}
       </motion.div>
     </div>
   );
