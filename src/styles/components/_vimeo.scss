@@ -1,0 +1,47 @@
+.vimeo {
+  .vimeo-container {
+    a {
+      font-weight: 400;
+      text-decoration: none;
+      color: inherit;
+      font-size: inherit;
+      display: flex;
+      flex-direction: column;
+      :hover {
+        filter: brightness(75%);
+      }
+      .author {
+        padding: 0 0 10px 0;
+        font-size: 14px;
+      }
+      .title {
+        padding: 10px 0;
+        font-size: 28px;
+      }
+      .description {
+        padding: 10px 0;
+        font-size: 16px;
+      }
+    }
+  }
+  .load-more {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+    .load-button {
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      padding: 20px;
+      background-color: transparent;
+      font-weight: 300;
+      font-family: inherit;
+      font-size: 16px;
+      color: inherit;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .load-button:hover {
+      filter: brightness(75%);
+    }
+  }
+}
